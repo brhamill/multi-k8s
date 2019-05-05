@@ -1,0 +1,16 @@
+apiVersion: skaffold/v1beta9
+kind: Config
+build:
+  artifacts:
+    - image: brhamill/multi-client
+      context: ./client
+      sync: 
+        '*.js': .
+    - image: brhamill/multi-server
+      context: ./server
+    - image: brhamill/multi-worker
+      context: ./worker
+deploy:
+  kubectl:
+    manifests:
+      - ./k8s/*
