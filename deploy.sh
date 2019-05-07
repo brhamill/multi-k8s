@@ -1,6 +1,6 @@
 docker build -t brhamill/multi-client:latest -t brhamill/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t brhamill/multi-server:latest -t brhamill/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t brhamill/multi-worker:latest -t brhamill/multi-worker:$SHA -f ./server/Dockerfile ./worker
+docker build -t brhamill/multi-worker:latest -t brhamill/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push brhamill/multi-client:latest
 docker push brhamill/multi-server:latest
