@@ -11,6 +11,7 @@ docker push brhamill/multi-server:$SHA
 docker push brhamill/multi-worker:$SHA
 
 kubectl apply -f k8s/prod
+kubectl apply -f k8s
 kubectl set image deployments/client-deployment client=brhamill/multi-client:$SHA
 kubectl set image deployments/server-deployment server=brhamill/multi-server:$SHA
 kubectl set image deployments/worker-deployment worker=brhamill/multi-worker:$SHA
